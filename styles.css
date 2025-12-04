@@ -1,0 +1,556 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    background-color: #D8D8D0;
+    /* --- SCROLLING ENABLED --- */
+    overflow-x: hidden; 
+    height: auto; 
+    width: 100vw;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    /* --- SCROLLING ENABLED --- */
+    height: 100vh; /* Keep the landing page full height */
+    overflow: visible; /* Allows the rest of the page to show */
+}
+
+/* Background Text "RICKY" */
+.logo-background {
+     position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28vw;
+    font-weight: 900;
+    color: #EC6426;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    z-index: 1;
+    white-space: nowrap;
+    padding-top: 2vh;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    position: fixed; /* Fixed position allows navigation bar to stay on top */
+    top: 40px;
+    right: 40px;
+    z-index: 100;
+    display: flex;
+    gap: 30px;
+}
+/* ... (Rest of existing header/hero styles unchanged) ... */
+.top-nav a {
+    color: #632713;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+    color: #EC6426;
+}
+
+/* Corner Text Styles */
+.corner-text {
+    position: absolute;
+    z-index: 10;
+}
+
+.bottom-left {
+    bottom: 50px;
+    left: 40px;
+}
+
+.label {
+    color: #632713;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.sublabel {
+    color: #632713;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.number {
+    color: #632713;
+    font-size: 70px;
+    font-weight: normal;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+}
+
+/* NEW: Style for the "View My Work" Button */
+.view-work-btn {
+    display: inline-block;
+    background-color: #632713;/* Primary Orange */
+    color: #D8D8D0; /* cream Text */
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-work-btn:hover {
+    background-color: #EC6426; /* Secondry Yellow/Orange */
+    color: #FFFFFF; /* White for better contrast */
+}
+
+
+/* Hero Image - Centered */
+.hero-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 650px;
+    z-index: 2;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+}
+
+/* Main Title overlaying image */
+.main-title {
+    position: absolute;
+    top: 66.2%;
+    left: 50%;
+    transform: translate(-50%, 15%);
+    font-size: 70px;
+    font-weight: 900;
+    color: #EC6426;
+    text-align: center;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    z-index: 3;
+}
+
+/* ABOUT SECTION STYLES START */
+.about-section {
+    width: 100%;
+    /* Position the section immediately after the 100vh landing page */
+    padding-top: 100px; /* Padding for visual separation */
+    background-color: #D8D8D0; 
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 5; /* Ensure it is above the background text when scrolling */
+}
+
+.about-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    gap: 80px;
+    align-items: stretch; /* allows height */
+}
+
+/* Left side: Text Block */
+.about-text {
+    flex: 1;
+    padding-right: 20px;
+    color: #632713; /* Dark brown text */
+}
+
+.about-heading {
+    font-size: 55px;
+    font-weight: 900;
+    color: #EC6426; /* Primary Orange */
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.about-paragraph {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.about-paragraph strong {
+    font-weight: 900;
+    color: #632713;
+}
+
+/* Right side: Image Container */
+.about-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%; /* Important: Makes the image match the container height */
+    object-fit: cover; /* Important: Ensures the image covers the container without distortion */
+    display: block;
+}
+/* ABOUT SECTION STYLES END */
+
+
+
+/* PORTFOLIO SECTION STYLES (CARD LAYOUT) */
+.portfolio-section {
+    background-color: #EC6426; 
+    padding: 100px 0; /* Added padding back for separation */
+}
+
+.portfolio-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* NEW: Portfolio Heading Style (matching about section) */
+.portfolio-heading {
+    font-size: 55px;;
+    font-weight: 900;
+    color: #D8D8D0; /* Use dark brown for the heading */
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* GRID LAYOUT - 4 COLUMNS WITH GAP */
+.portfolio-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* Gap for card separation */
+}
+
+.portfolio-item {
+    display: block;
+    background-color: #D8D8D0; /* Cream background for the card */
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.item-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 250px; /* Consistent image height for card look */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.portfolio-item:hover .item-image img {
+    transform: scale(1.05); 
+}
+
+/* NEW: Description area BELOW the image */
+.item-description {
+    padding: 20px;
+    color: #632713; /* Dark brown text */
+}
+
+.item-heading {
+    font-size: 18px; /* Smaller heading for card */
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.item-category {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+
+/* CONTACT SECTION STYLES START */
+.contact-section {
+    background-color: #D8D8D0; /* Dark Brown background */
+    color: #EC6426; /* Cream text */
+    padding: 100px 0;
+}
+
+.contact-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.contact-left {
+    flex: 1;
+    max-width: 40%;
+}
+
+.contact-right {
+    flex: 1;
+    max-width: 60%;
+}
+
+.contact-heading {
+    font-size: 55px;
+    font-weight: 900;
+    color: #EC6426; /* Orange heading */
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.contact-text {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-btn {
+    display: inline-block;
+    background-color: #EC6426; /* Cream button background */
+    color: #632713; /* Dark brown text */
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: #EC6426; /* Orange on hover */
+    color: #FFFFFF;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for input fields */
+    border: 1px solid #EC6426; /* Orange border */
+    color: #D8D8D0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #EC6426;
+    opacity: 0.7;
+    font-weight: 900;
+}
+
+.submit-btn {
+    align-self: flex-start; /* Aligns the button to the left */
+    background-color: #EC6426; /* Orange button */
+    color: #632713;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #D8D8D0; /* Cream on hover */
+    color: #632713;
+}
+/* CONTACT SECTION STYLES END */
+
+/* FOOTER STYLES START */
+.main-footer {
+    width: 100%;
+    background-color: #632713; /* Dark Brown, same as contact */
+    color: #D8D8D0; /* Cream text */
+    padding: 20px 40px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+.copyright-text {
+    line-height: 1.5;
+    opacity: 0.8;
+}
+/* FOOTER STYLES END */
+
+/*========================================
+  RESPONSIVE DESIGN
+========================================*/
+
+/* Desktop to Medium Tablet (1400px to 1025px) */
+@media (max-width: 1400px) {
+    .logo-background {
+        font-size: 25vw;
+    }
+    .hero-image {
+        width: 420px;
+        height: 550px;
+    }
+}
+
+/* Large Tablet (1200px and below) - Transition to 3 columns */
+@media (max-width: 1200px) {
+    .portfolio-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    .item-image img {
+        height: 200px;
+    }
+}
+
+/* Tablet (1024px to 769px) - Main Tablet Adjustments */
+@media (max-width: 1024px) {
+    /* ABOUT SECTION RESPONSIVENESS */
+    .about-content-wrapper {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    .about-image {
+        max-width: 100%;
+        order: -1; 
+    }
+    .about-text {
+        padding-right: 0;
+        padding-bottom: 20px;
+        border-bottom: 3px solid #EC6426;
+    }
+    .about-heading {
+        font-size: 40px;
+    }
+
+    /* Contact Section Stacking */
+    .contact-content-wrapper {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    .contact-left, .contact-right {
+        max-width: 100%;
+    }
+    .contact-heading {
+        font-size: 40px;
+    }
+
+    /* Portfolio: 2 columns */
+    .portfolio-heading {
+        font-size: 40px;
+    }
+    .portfolio-content-wrapper {
+        padding: 0 20px;
+    }
+    .portfolio-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .item-image img {
+        height: 250px;
+    }
+    
+}
+
+/* Mobile (768px and below - 1 column) */
+@media (max-width: 768px) {
+    .logo-background {
+        font-size: 28vw;
+    }
+    
+    .hero-image {
+        width: 280px;
+        height: 400px;
+    }
+    .main-title {
+        font-size: 45px;
+    }
+    
+    /* Apply consistent padding to all main sections */
+    .about-section, .portfolio-section, .contact-section {
+        padding: 50px 0;
+    }
+    
+    /* Portfolio: 1 column */
+    .portfolio-heading {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    .portfolio-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .item-image img {
+        height: 250px; 
+    }
+
+    /* Contact Mobile Adjustments */
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .social-btn, .submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
